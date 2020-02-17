@@ -1,0 +1,25 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ar">locale/cbdhealthnetwork_ar.qm</file>
+        <file alias="bg">locale/cbdhealthnetwork_bg.qm</file>
+        <file alias="de">locale/cbdhealthnetwork_de.qm</file>
+        <file alias="en">locale/cbdhealthnetwork_en.qm</file>
+        <file alias="es">locale/cbdhealthnetwork_es.qm</file>
+        <file alias="fi">locale/cbdhealthnetwork_fi.qm</file>
+        <file alias="fr">locale/cbdhealthnetwork_fr.qm</file>
+        <file alias="it">locale/cbdhealthnetwork_it.qm</file>
+        <file alias="ja">locale/cbdhealthnetwork_ja.qm</file>
+        <file alias="ko">locale/cbdhealthnetwork_ko.qm</file>
+        <file alias="nl">locale/cbdhealthnetwork_nl.qm</file>
+        <file alias="pl">locale/cbdhealthnetwork_pl.qm</file>
+        <file alias="pt">locale/cbdhealthnetwork_pt.qm</file>
+        <file alias="ru">locale/cbdhealthnetwork_ru.qm</file>
+        <file alias="sk">locale/cbdhealthnetwork_sk.qm</file>
+        <file alias="sv">locale/cbdhealthnetwork_sv.qm</file>
+        <file alias="th">locale/cbdhealthnetwork_th.qm</file>
+        <file alias="tr">locale/cbdhealthnetwork_tr.qm</file>
+        <file alias="vi">locale/cbdhealthnetwork_vi.qm</file>
+        <file alias="zh_CN">locale/cbdhealthnetwork_zh_CN.qm</file>
+        <file alias="zh_TW">locale/cbdhealthnetwork_zh_TW.qm</file>
+    </qresource>
+</RCC>
