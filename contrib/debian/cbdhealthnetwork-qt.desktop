@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CbdHealthNetwork Core
+Comment=CbdHealthNetwork P2P Cryptocurrency
+Comment[de]=Verbinde mit dem CbdHealthNetwork peer-to-peer Netzwerk
+Comment[fr]=CbdHealthNetwork, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=CbdHealthNetwork, eşten eşe kriptografik sanal para birimi
+Exec=cbdhealthnetwork-qt %u
+Terminal=false
+Type=Application
+Icon=cbdhealthnetwork128
+MimeType=x-scheme-handler/cbdhealthnetwork;
+Categories=Office;Finance;

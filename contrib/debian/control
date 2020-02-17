@@ -1,0 +1,70 @@
+Source: cbdhealthnetwork
+Section: utils
+Priority: optional
+Maintainer: Holger Schinzel <holger@cbdhealthnetwork.org>
+Uploaders: Holger Schinzel <holger@cbdhealthnetwork.org>
+Build-Depends: debhelper,
+ devscripts,
+ automake,
+ libtool,
+ bash-completion,
+ libdb4.8++-dev,
+ libssl-dev,
+ pkg-config,
+ libevent-dev,
+ libboost-system1.48-dev | libboost-system-dev (>> 1.47),
+ libboost-filesystem1.48-dev | libboost-filesystem-dev (>> 1.47),
+ libboost-program-options1.48-dev | libboost-program-options-dev (>> 1.47),
+ libboost-thread1.48-dev | libboost-thread-dev (>> 1.47),
+ libboost-test1.48-dev | libboost-test-dev (>> 1.47),
+ libboost-chrono1.48-dev | libboost-chrono-dev (>> 1.47),
+ libminiupnpc8-dev | libminiupnpc-dev,
+ qt4-qmake, libqt4-dev,
+ qttools5-dev-tools, qttools5-dev,
+ libqrencode-dev,
+ libprotobuf-dev, protobuf-compiler,
+ python,
+ libzmq3-dev
+Standards-Version: 3.9.2
+Homepage: https://www.cbdhealthnetwork.org/
+Vcs-Git: git://github.com/cbdhealthnetworkpay/cbdhealthnetwork.git
+Vcs-Browser: https://github.com/cbdhealthnetworkpay/cbdhealthnetwork
+
+Package: cbdhealthnetworkd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - daemon
+ CbdHealthNetwork is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. CbdHealthNetwork uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. CbdHealthNetwork Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides the daemon, cbdhealthnetworkd, and the CLI tool
+ cbdhealthnetwork-cli to interact with the daemon.
+
+Package: cbdhealthnetwork-qt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - Qt GUI
+ CbdHealthNetwork is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. CbdHealthNetwork uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. CbdHealthNetwork Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides CbdHealthNetwork-Qt, a GUI for CbdHealthNetwork based on Qt.
+
+Package: cbdhealthnetwork-tx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer digital currency - standalone transaction tool
+ CbdHealthNetwork is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. CbdHealthNetwork uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. CbdHealthNetwork Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides cbdhealthnetwork-tx, a command-line transaction creation
+ tool which can be used without a cbdhealthnetwork daemon.  Some means of
+ exchanging minimal transaction data with peers is still required.

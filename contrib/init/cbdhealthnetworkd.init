@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  cbdhealthnetworkd The CbdHealthNetwork Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: cbdhealthnetworkd
+# processname: cbdhealthnetworkd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/cbdhealthnetworkd, see below
+if [ -f /etc/sysconfig/cbdhealthnetworkd ]; then
+        . /etc/sysconfig/cbdhealthnetworkd
+fi
+
+RETVAL=0
+
+prog=cbdhealthnetworkd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/cbdhealthnetworkd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/cbdhealthnetworkd}
+
+# cbdhealthnetworkd defaults to /usr/bin/cbdhealthnetworkd, override with BITCOIND_BIN
+cbdhealthnetworkd=${BITCOIND_BIN-/usr/bin/cbdhealthnetworkd}
+
+# cbdhealthnetworkd opts default to -disablewallet, override with BITCOIND_OPTS
+cbdhealthnetworkd_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $cbdhealthnetworkd $cbdhealthnetworkd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

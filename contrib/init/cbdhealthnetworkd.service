@@ -1,0 +1,22 @@
+[Unit]
+Description=CbdHealthNetwork's distributed currency daemon
+After=network.target
+
+[Service]
+User=cbdhealthnetworkcore
+Group=cbdhealthnetworkcore
+
+Type=forking
+PIDFile=/var/lib/cbdhealthnetworkd/cbdhealthnetworkd.pid
+ExecStart=/usr/bin/cbdhealthnetworkd -daemon -pid=/var/lib/cbdhealthnetworkd/cbdhealthnetworkd.pid \
+-conf=/etc/cbdhealthnetworkcore/cbdhealthnetwork.conf -datadir=/var/lib/cbdhealthnetworkd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
